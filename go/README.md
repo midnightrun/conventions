@@ -69,6 +69,43 @@ More context:
 > between unrelated concerns, encourage tight coupling and makes the code
 > that relies on them hard to test.
 
+### Imports
+
+Group imports into two groups: standard library imports and
+non-standard-library code.
+
+Note that `goimports` will not remove single newlines between imports
+for us, since it cannot decide if the newline is placed there
+deliberately to separate the imports into two sematically different
+groups or if it is placed there accidentally.
+
+#### Example
+
+```go
+// good
+import (
+        stdlib-pkg1
+        stdlib-pkg2
+        stdlib-pkg3
+        company-pkg1
+
+        thirdpartylib-pkg1
+        thirdpartylib-pkg2
+)
+
+// bad (standard library imports are not all in the same group)
+import (
+        stdlib-pkg1
+        stdlib-pkg2
+
+        stdlib-pkg3
+
+        company-pkg1
+        thirdpartylib-pkg1
+        thirdpartylib-pkg2
+)
+```
+
 [gometalinter]: https://github.com/alecthomas/gometalinter
 [effective-go]: https://golang.org/doc/effective_go.html
 [naming-conventions]: https://talks.golang.org/2014/names.slide#1
