@@ -41,8 +41,7 @@ optimize for brevity.
 
 ## Directory layout
 
-**TODO:** Decide if to adopt [Ben Johnson's standard package
-layout](https://medium.com/@benbjohnson/standard-package-layout-7cdbc8391fc1).
+Follow [Standard Go Project Layout](https://github.com/golang-standards/project-layout).
 
 ## Additions
 
