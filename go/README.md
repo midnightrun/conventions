@@ -45,12 +45,12 @@ Follow [Standard Go Project Layout](https://github.com/golang-standards/project-
 
 ## Additions
 
-### Max 100 characters per line
+### Max 120 characters per line
 
 The `gofmt` tool does not enforce line length.
 
 For readability's sake, especially for GitHub code reviews, we aim to keep
-our lines below 100 characters.
+our lines below 120 characters.
 
 ### Avoid package-level globals
 
