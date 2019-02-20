@@ -3,7 +3,14 @@
 ## Formatter
 
 Format with [clang-format](https://clang.llvm.org/docs/ClangFormat.html)
-using the default settings.
+using following style configuration specified in `<project_directory>/.clang-format`.
+
+```
+BasedOnStyle: Chromium 
+ColumnLimit: 120
+```
+
+Run: `clang-format -style=file -i [<file> ...]`
 
 ## Linter
 
