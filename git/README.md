@@ -42,9 +42,9 @@ Most importantly, use imperative mode in the summary:
 ### Configure your git's line ending behavior
 
 Line endings are different for different operating systems. In order to
-ensure a smooth collaboration across plattforms, your git should be set as follows:
-- git config --global core.autocrlf true for Windows
-- git config --global core.autocrlf input for Linux (and MacOS)
+ensure a smooth collaboration across plattforms, your git config should be set as follows:
+- `git config --global core.autocrlf true` for Windows
+- `git config --global core.autocrlf input` for Linux (and MacOS)
 
 For details, see [this article](https://stackoverflow.com/questions/10418975/how-to-change-line-ending-settings).
 For further reading, please refer to [here](https://stackoverflow.com/questions/3206843/how-line-ending-conversions-work-with-git-core-autocrlf-between-different-operat) and [here](http://web.archive.org/web/20150912185006/http://adaptivepatchwork.com:80/2012/03/01/mind-the-end-of-your-line/).
