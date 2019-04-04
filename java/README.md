@@ -8,7 +8,7 @@ the default settings.
 
 ## Linter
 
-Lint with [FindBugs](http://findbugs.sourceforge.net/) using the default
+Lint with [SpotBugs](https://spotbugs.github.io/) using the default
 settings.
 
 ## Style guide
