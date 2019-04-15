@@ -108,3 +108,71 @@ import (
 [gometalinter]: https://github.com/alecthomas/gometalinter
 [effective-go]: https://golang.org/doc/effective_go.html
 [naming-conventions]: https://talks.golang.org/2014/names.slide#1
+
+### Functions
+
+Both function declarations as well as calls with multiple arguments (or
+multiple return values) shall, similar to structs, be split up into multiple
+lines if line length is too long. First argument shall be on a new line,
+separated from opening parenthesis, last argument is followed by a new line and
+closing parenthesis. Note that each argument on a new line shall be followed by
+its type to prevent mistakes.
+
+#### Examples
+
+```go
+// good, multiple arguments
+func A(a, b, c, d int){
+    ...
+}
+
+// also good, multiple arguments
+func A(
+    a int,
+    b int,
+    c int,
+    d int,
+    ...
+    x int,
+    ){
+        ...
+}
+
+// good, multiple return values
+func A(a int) (b, c, d, e int){
+    ...
+}
+
+// also good, multiple return values
+func A(a int)(
+    b int,
+    c int,
+    d int,
+    e int,
+    ...
+    x int,
+    ){
+    ...
+}
+
+// bad (type is not defined for each argument)
+func A(
+    a,
+    b,
+    c,
+    d,
+    ...
+    x int,
+    ){
+        ...
+}
+
+// bad (each argument is not on its own line)
+func A(
+    a, b int,
+    c, d bool,
+    ...
+    ){
+        ...
+}
+```
