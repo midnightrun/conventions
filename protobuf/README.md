@@ -1,9 +1,5 @@
 # Protobuf
 
-* [ ] **TODO:** Await a stable release of `prototool`
-
-See [Current status](https://github.com/uber/prototool#current-status).
-
 ## Formatter
 
 Format with `prototool format`.
@@ -12,6 +8,15 @@ Format with `prototool format`.
 
 Lint with `prototool lint`.
 
+Configure `prototool` to use the `uber2` linter.
+
+```yaml
+lint:
+  group: uber2
+```
+
 ## Style guide
 
-Look to [Prototool style guide](https://github.com/uber/prototool/blob/master/etc/style/uber/uber.proto).
+Look to [Uber's Protobuf Style Guide V2][uberv2].
+
+[uberv2]: https://github.com/uber/prototool/tree/dev/style
