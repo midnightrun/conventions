@@ -11,9 +11,9 @@ Conventions increase the number of issues caught before [code
 review](./code-review), so that reviewers can focus on what matters (in
 order of importance):
 
-* Correctness
-* Ease of understanding
-* Efficiency
+- Correctness
+- Ease of understanding
+- Efficiency
 
 Conventions ensure that our code looks the same no matter who writes it.
 This makes it faster and easier for us to ramp up in new parts of the code
@@ -23,9 +23,9 @@ base.
 
 For every language we build software in, we strive to have at least:
 
-* A formatter, to remove all formatting discussions from code review
-* A linter, to catch common errors before code review
-* A style guide, to further increase uniformity of our code
+- A formatter, to remove all formatting discussions from code review
+- A linter, to catch common errors before code review
+- A style guide, to further increase uniformity of our code
 
 ## How
 

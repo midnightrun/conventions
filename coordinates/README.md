@@ -9,6 +9,7 @@ Questions about this document can be sent to the Perception team at
 team-perception@einride.tech .
 
 ## Chirality
+
 Use right-hand rule for all measurements and values i.e. before using
 our sensor measurements the data should be converted to the right-hand
 rule. Read more at [Wikipedia: Right-hand rule](https://en.wikipedia.org/wiki/Right-hand_rule).

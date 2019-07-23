@@ -43,6 +43,7 @@ Most importantly, use imperative mode in the summary:
 
 Line endings are different for different operating systems. In order to
 ensure a smooth collaboration across plattforms, your git config should be set as follows:
+
 - `git config --global core.autocrlf true` for Windows
 - `git config --global core.autocrlf input` for Linux (and MacOS)
 
