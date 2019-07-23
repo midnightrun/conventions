@@ -68,6 +68,56 @@ More context:
 > between unrelated concerns, encourage tight coupling and makes the code
 > that relies on them hard to test.
 
+### Error handling
+
+Generally error handling follows https://blog.golang.org/error-handling-and-go. We wrap errors in order
+to keep adding context to the stack traces.
+
+More context:
+
+- [The xerrors package](https://godoc.org/golang.org/x/xerrors)
+
+#### Happy path vs Sad path
+
+In the normal case the code returns errors through sad paths branch outs where errors are handled and returned.
+Happy paths keeps to the left edge of the code.
+
+```go
+// good
+func foo() error {
+        if err := bar(); err != nil {
+                // sad path handles and returns errors
+                return xerror.Errorf("foo: %w", err)
+        }
+        // happy paths return non-erroneous results
+        return nil
+}
+```
+
+```go
+// bad
+func foo() error {
+        err := bar()
+        return err
+}
+```
+
+```go
+// also bad
+func foo() error {
+        err := bar()
+        if err != nil {
+                return xerror.Errorf("foo: %w", err)
+        } else {
+                return nil
+        }
+}
+```
+
+More context:
+
+- [Align the happy path to the left](https://medium.com/@matryer/line-of-sight-in-code-186dd7cdea88)
+
 ### Imports
 
 Group imports into two groups: standard library imports and
