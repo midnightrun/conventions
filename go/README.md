@@ -45,6 +45,27 @@ Follow [Standard Go Project Layout](https://github.com/golang-standards/project-
 
 ## Additions
 
+### Mutable declarations
+
+[Follow Dave Cheneys recommendation on mutable declarations:](https://dave.cheney.net/practical-go/presentations/qcon-china.html#_use_a_consistent_declaration_style)
+
+- When declaring a variable without initialisation, use the var syntax.
+- When declaring and explicitly initialising a variable, use :=.
+
+```go
+// good
+var foo Foo
+
+// also good
+foo := Foo{bar: "foo"}
+
+// bad
+foo := Foo{}
+
+// also bad
+var foo = Foo{bar: "foo"}
+```
+
 ### Max 120 characters per line
 
 The `gofmt` tool does not enforce line length.
