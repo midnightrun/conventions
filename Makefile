@@ -1,7 +1,8 @@
 # all: all tasks required for a complete build
 .PHONY: all
 all: \
-	markdown-lint
+	markdown-format \
+	git-verify-nodiff
 
 BUILD_DIR := $(abspath $(dir $(lastword $(MAKEFILE_LIST))))/build
 FILES_DIR := $(BUILD_DIR)/files
@@ -19,6 +20,11 @@ $(PRETTIER):
 	touch $@
 
 # markdown-lint: lint Markdown files with markdownlint
-.PHONY: markdown-lint
-markdown-lint: $(PRETTIER)
-	$(PRETTIER) --check **/*.md  --parser markdown
+.PHONY: markdown-format
+markdown-format: $(PRETTIER)
+	$(PRETTIER) --check **/*.md  --parser markdown --write
+
+# git-verify-nodiff: verify that there is no differences between the staging area and the working directory.
+.PHONY: git-verify-nodiff
+git-verify-nodiff:
+	git diff-index --quiet HEAD --
